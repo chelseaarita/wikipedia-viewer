@@ -16,11 +16,12 @@
 
 <!-- script -->
 
+
 <script>
-$("#searchTerm").keypress(function(e)){
+$("#text").keypress(function(e)){
 	if(e.keyCode === 13){
-		var text = $("#searchTerm").val();
-	var url = "https://enwikipedia.org/w/api.php?action=opensearch&search="+ text +"&format=json&callback?";
+		var text = $("#text").val();
+	var url = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm +"&format=json&callback=?";
 		$.ajax({
 			url: url,
 			type: "GET",
@@ -39,16 +40,16 @@ $("#searchTerm").keypress(function(e)){
 
 </head>
 <title>Wikipedia Viewer</title>
+
 <body>
-<div class="wrap">
-   <div class="search">
+	
+	<div class="wrap">
       <input type="text" class="searchTerm" placeholder="Search...">
       <button type="submit" class="searchButton">
         <i class="fa fa-search" aria-hidden="true"></i>
      </button>
      <center><p><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click here for a random article</a></p></center>
-   </div>
-</div>
+	</div>
 
 </body>
 </html>
